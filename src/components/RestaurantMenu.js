@@ -5,7 +5,7 @@ import { IMG_CDN_URL } from "./constants";
 import Shimmer from "./Shimmer";
 
 
-const RestaurantMenu = () => {
+const RestaurantMenu = (id) => {
 
       const params = useParams();
       console.log(params);
@@ -20,8 +20,8 @@ const RestaurantMenu = () => {
 
       async function getMenuData() {
             const data = await fetch(
-                  "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=" + id
-            );
+                  `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${id}&submitAction=ENTER`
+            )
 
             const json = await data.json();
             console.log(json);
