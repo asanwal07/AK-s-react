@@ -8,10 +8,8 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
 
-function filterData(searchText, Restaurants) {
-      //Tolowercase is used to filter the restaurants even the user writes in capital or lower case.
-      return Restaurants.filter((res) => res.data.name.toLowerCase().includes(searchText.toLowerCase()));
-}
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 
 const Body = () => {
@@ -29,6 +27,11 @@ const Body = () => {
       // [](dependency array)--> this means it will only be called once and when->? after 1st render.
       // if no array is there that means it will be called each time after every render.
 
+      const offline = useOnline();
+
+      if (!offline) {
+            return <h1>🔴Hey you are offline buddy.</h1>
+      }
 
       async function getrestaurants() {
             const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING");
