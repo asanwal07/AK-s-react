@@ -1,4 +1,4 @@
-
+import React from "react";
 import { useEffect, useState } from "react";
 // import { RestaurantList } from "./constants"
 import RestaurantCard from "./RestaurantCard"

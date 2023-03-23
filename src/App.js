@@ -15,11 +15,11 @@ import Instamart from "./components/Instamart";
 
 const AppLayout = () => {
       return (
-            <>
+            <div>
                   <Header />
                   <Outlet />
                   <Footer></Footer>
-            </>
+            </div>
       );
 };
 
@@ -65,6 +65,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 root.render(<RouterProvider router={appRouter} />);
+// root.render(<AppLayout></AppLayout>);
 
 // import { Body } from "./components/Body";
 // const heading = React.createElement(
@@ -78,6 +79,7 @@ root.render(<RouterProvider router={appRouter} />);
 // const heading = () => {
 //       <h1>Title</h1>
 // }
+
 
 /**
  * Structure of website

@@ -1,4 +1,4 @@
-
+import React from "react";
 const Instamart = () => {
 
       return (

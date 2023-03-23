@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { MENU_CDN_URL } from "../components/constants";
 

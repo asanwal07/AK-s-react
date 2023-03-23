@@ -1,3 +1,4 @@
+import React from "react";
 import { IMG_CDN_URL } from "./constants";
 
 const RestaurantCard = ({ name, cloudinaryImageId, cuisines, lastMileTravelString }) => {
