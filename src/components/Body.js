@@ -35,7 +35,7 @@ const Body = () => {
 
 
       async function getrestaurants() {
-            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING");
+            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6547698&lng=77.18787619999999&page_type=DESKTOP_WEB_LISTING");
 
             const json = await data.json();
 
@@ -76,8 +76,8 @@ const Body = () => {
                   <div className="Restaurant-List">
                         {
                               FilteredRestaurants?.map((restaurant) => {
-                                    return <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.id}>
-                                          {FilteredRestaurants?.length == 0 ? <h1>hiii</h1> : <RestaurantCard {...restaurant.data} />}
+                                    return <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
+                                          {FilteredRestaurants?.length == 0 ? <h1>hiii</h1> : <RestaurantCard {...restaurant.data} key={restaurant.data.id} />}
                                     </Link>
                               })
                         }
